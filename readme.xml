@@ -1,0 +1,16 @@
+<ipk-projekt-3>
+<autor>Michal Kysilko</autor>
+<login>xkysil00@stud.fit.vutbr.cz</login>
+<datum>27.4.2013</datum>
+<soubory>
+  <soubor jmeno="rdtclient.cpp" autor="Michal Kysilko"/>
+  <soubor jmeno="rdtserver.cpp" autor="Michal Kysilko"/>
+  <soubor jmeno="Makefile" autor="Michal Kysilko"/>
+  <soubor jmeno="udt.h" autor="Ondrej Rysavy"/>
+  </soubory>
+<protokol>
+Protokol je obdobou algoritmu Go-Back-N, s tim, ze pakety jsou potvrzovany kumulativne - potrvzeno je bud cele okno nebo nic. Jsou-li vsechny pakety v okne potvrzeny, muze se okno posunout. Pokud nektery paket k serveru nedojde a vyprsi 2 sekundovy timeout, odesle se cele okno znovu. Velikost okna jsem zvolil 10. V hlavicce datagramu je udaj o id paketu a o celkovem poctu paketu - bez toho udaje jsem nebyl schopen urcit, jestli posledni paket prisel skutecne posledni. Cislovani paketu je od 1 a posledni paket ma id 0. Server odpovida zpravami ACK ve stylu: (1) v poradku, posun okno; (2) prisly vsechny pakety, muzes ukoncit cinnost.
+Server po prijeti posledniho paketu seradi pakety podle id a vytiskne vysledek na standardni vystup.
+
+</protokol>
+</ipk-projekt-3>
